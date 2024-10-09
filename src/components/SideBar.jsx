@@ -8,41 +8,19 @@ import {
   FaEllipsisH,
   FaPlusSquare,
 } from "react-icons/fa";
+import SideBarItem from "./SideBarItem"; 
+
 export const SideBar = () => {
   return (
     <ul className="space-y-4">
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaBell />
-        <span>Aktivnosti</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaComments />
-        <span>Ćaskanje</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaUsers />
-        <span>Timovi</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaCalendarAlt />
-        <span>Kalendar</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaPhone />
-        <span>Pozivi</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaCloud />
-        <span>OneDrive</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaEllipsisH />
-        <span>Više</span>
-      </li>
-      <li className="flex items-center justify-center space-x-3 text-xl hover:text-gray-400 hover:bg-gray-700 transition-colors duration-200 cursor-pointer p-2 rounded-lg">
-        <FaPlusSquare />
-        <span>Aplikacije</span>
-      </li>
+      <SideBarItem iconName={FaBell} label={"Aktivnosti"} />
+      <SideBarItem iconName={FaComments} label={"Ćaskanje"} />
+      <SideBarItem iconName={FaUsers} label={"Timovi"} />
+      <SideBarItem iconName={FaCalendarAlt} label={"Kalendar"} />
+      <SideBarItem iconName={FaPhone} label={"Pozivi"} />
+      <SideBarItem iconName={FaCloud} label={"OneDrive"} />
+      <SideBarItem iconName={FaEllipsisH} label={"Više"} />
+      <SideBarItem iconName={FaPlusSquare} label={"Aplikacije"} />
     </ul>
   );
 };
