@@ -1,4 +1,4 @@
-import { SideBar } from "./Sidebar";
+import { SideBar } from "./SideBar";
 
 export const BurgerMenu = ({ isOpen, onClose }) => {
   return (
