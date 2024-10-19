@@ -3,7 +3,7 @@ import { SideBar } from "./SideBar";
 export const BurgerMenu = ({ isOpen, onClose }) => {
   return (
     <div
-      className={`bg-black fixed top-0 left-0 h-full w-full md:w-1/5 md:min-w-44 md:max-w-52 text-white transition-transform duration-300 ${
+      className={`bg-green-400 flex top-0 left-0 h-full w-full md:w-1/5 md:min-w-44 md:max-w-52 text-white transition-transform duration-300 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } p-4 flex flex-col`}
     >
