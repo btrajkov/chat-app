@@ -65,7 +65,7 @@ export const SideBar = () => {
         </div>
       </div>
       <ul
-        className={`flex flex-col justify-around pt-10 pb-10
+        className={`flex h-full flex-col justify-around pt-10 pb-10
         ${isSideBarOpen ? "flex" : "hidden"}
         md:block md:pt-0 md:gap-2 md:h-screen `}
       >

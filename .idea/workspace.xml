@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +41,7 @@
   "keyToString": {
     "Node.js.SideBar.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "frontend-master",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/markosudar/Desktop/chat-app",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
