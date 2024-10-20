@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chat/Chat.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/old-layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/utils/ThemeProvider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/BurgerMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/BurgerMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Searchbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Searchbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat/Chat.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/BurgerMenu.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Searchbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +44,9 @@
     &quot;accountId&quot;: &quot;8024ab1f-fbff-4d5a-ac98-93927d39507a&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Library/Caches/JetBrains/WebStorm2024.2/javascript/typings/react-dom/18.3.1/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -46,12 +59,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "frontend-master",
+    "git-widget-placeholder": "sidebar-and-navbar",
     "last_opened_file_path": "/Users/markosudar/Desktop/chat-app",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/markosudar/Desktop/chat-app/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/markosudar/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }

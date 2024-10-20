@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light Mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg_search: #fafafa;
+  --bg_sidebar: #ebebeb;
+  --bg_actionbar: #f5f5f5;
+  --bg_toolbar: #ebebeb;
+  --bg_children: #ffffff;
+  --active_text: #242424;
+  --inactive_text: #c5c5c5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #303030;
-    --foreground: #ededed;
-  }
+/* Dark Mode */
+.dark {
+  --bg_search: #242424;
+  --bg_sidebar: #0a0a0a;
+  --bg_actionbar: #1a1a1a;
+  --bg_toolbar: #0a0a0a;
+  --bg_children: #1f1f1f;
+  --active_text: #eeeeee;
+  --inactive_text: #7b7b7b;
 }
 
+/* Handle Safe Area Insets for iPhones with a notch */
+html, body {
+  background-color: var(--bg_toolbar); /* Use your dark/light mode background color */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Safe area padding for iPhone notches */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Fallback for browsers that do not support env() */
+@supports (padding: max(0px)) {
+  body {
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
   }
 }

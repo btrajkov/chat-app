@@ -1,13 +1,13 @@
 export const SideBarItem = ({ iconName: Icon, label }) => {
   return (
     <li
-      className="flex items-center justify-center space-x-3 text-xl cursor-pointer p-2 rounded-lg
-       hover:text-gray-400 hover:bg-neutral-900 active:bg-neutral-800 transition-colors duration-200  
-md:border-b-2  md:justify-start  md:border-b-gray-500
-    "
+      // className="flex flex-col p-2 gap-0.5 items-center text-[10px] cursor-pointer border-l-[5px] border-l-transparent
+      //  active:border-l-[rgba(82,88,148,255)]"
+        className="flex p-4 gap-6 items-center text-[20px] cursor-pointer border-l-[5px] border-l-transparent
+       active:border-l-[rgba(82,88,148,255)]"
     >
-      <Icon />
-      <span>{label}</span>
+      <Icon className="text-xl"/>
+      <span className="text-gray-300">{label}</span>
     </li>
   );
 };
