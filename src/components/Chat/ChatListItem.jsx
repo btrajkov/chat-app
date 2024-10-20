@@ -11,11 +11,11 @@ const ChatListItem = ({ id, name, lastMessage, messageSender }) => {
 
   return (
     <button
-      className="flex items-center justify-center w-full cursor-pointer rounded-lg p-2"
+      className="flex text-start w-full cursor-pointer rounded-lg p-2"
       onClick={goToChat}
     >
       {/* Image placeholder */}
-      <div className="mr-2">
+      <div className="mr-5 md:mr-3">
         <Image
           src="/images/profile_image.png" // Replace with the path to the image fetched from your database
           alt={`${name}'s profile`}

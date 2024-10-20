@@ -15,13 +15,28 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body className={`h-screen w-screen overflow-hidden`}>
+      <body className={`h-screen w-screen overflow-hidden md:flex`}>
         <ThemeProvider />
-        {/*<SearchBar />*/}
-        <div className="bg-bg_sidebar">
+        {/*<Navigations /> for mobile*/}
+        <div className="bg-bg_sidebar md:hidden">
           <SideBar />
         </div>
-        <div>{children}</div>
+        {/*<Navigations /> for desktop*/}
+        <div className="md:h-screen md:flex md:flex-col">
+          <div
+            className="hidden md:h-[7vh] md:w-screen
+          md:flex md:justify-end md:items-center
+          md:pr-10"
+          >
+            <SearchBar />
+          </div>
+          <div className="md:flex">
+            <div className="hidden md:flex h-[93vh]">
+              <SideBar />
+            </div>
+            <div>{children}</div>
+          </div>
+        </div>
       </body>
     </html>
   );

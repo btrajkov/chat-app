@@ -4,12 +4,12 @@ import ChatList from "@/components/Chat/ChatList"; // Assuming ChatListItem comp
 
 const ChatPanelPage = () => {
   return (
-    <div className="flex h-[90vh] bg-red-300">
-      <div className="w-full bg-bg_sidebar flex flex-col items-center">
+    <div className="flex flex-col h-full">
+      <div className="h-full w-full bg-bg_actionbar flex-1 overflow-auto flex-col rounded-t-2xl md:rounded-tl-xl md:rounded-tr-[0px]">
         <ChatList />
       </div>
       <div className="hidden">
-        <h1>Messages</h1>
+        <h1>Something</h1>
       </div>
     </div>
   );

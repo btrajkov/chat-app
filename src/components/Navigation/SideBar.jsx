@@ -14,9 +14,15 @@ import SideBarItem from "./SideBarItem";
 import { CgClose } from "react-icons/cg";
 import { useEffect, useState } from "react";
 import { SearchBar } from "@/components/Navigation/SearchBar";
+import { useRouter } from "next/navigation";
 
 export const SideBar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const router = useRouter();
+
+  const changePage = () => {
+    router.push(`/chat-panel`);
+  };
 
   const toggleVisibility = () => {
     setIsSideBarOpen(!isSideBarOpen);
@@ -29,39 +35,42 @@ export const SideBar = () => {
           isSideBarOpen
             ? "h-full flex-col justify-center fixed"
             : "h-[9vh] flex-row justify-center items-center sticky"
-        }`}
+        }
+        md:justify-start md:items-start md:flex md:h-full
+        `}
     >
       <CgClose
         onClick={toggleVisibility}
         className={`text-3xl absolute right-5 top-2 font-semibold
         cursor-pointer
       ${isSideBarOpen ? "block" : "hidden"}
-      `}
+      md:hidden`}
       />
       <div
         className={`w-full h-full flex flex-row items-center justify-between
         ${isSideBarOpen ? "hidden" : "block"}`}
       >
         <button
-          className={`text-4xl ml-3 mt-[-10px]
+          className={`text-4xl ml-3 mt-[-10px] md:hidden
       ${isSideBarOpen ? "hidden" : "block"}
       `}
           onClick={toggleVisibility}
         >
           &#9776;
         </button>
-        <div className={`${isSideBarOpen ? "hidden" : "block"} pr-10 `}>
+        <div
+          className={`${isSideBarOpen ? "hidden" : "block"} pr-10 md:hidden`}
+        >
           <SearchBar />
         </div>
       </div>
       <ul
-        // className="flex flex-col justify-around gap-2"
-        className={`flex flex-col justify-around h-full pt-5 pb-5
-        ${isSideBarOpen ? "block" : "hidden"}
-        `}
+        className={`flex flex-col justify-around pt-10 pb-10
+        ${isSideBarOpen ? "flex" : "hidden"}
+        md:block md:pt-0 md:gap-2 md:h-screen `}
       >
-        <SideBarItem iconName={FaBell} label={"Activity"} />
-        <SideBarItem iconName={FaComments} label={"Chat"} />
+        <SideBarItem iconName={FaBell} pageName="neradi" label={"Activity"} />
+        <SideBarItem iconName={FaComments} pageName="chats" label={"Chat"} />
         <SideBarItem iconName={FaUsers} label={"Teams"} />
         <SideBarItem iconName={FaCalendarAlt} label={"Calendar"} />
         <SideBarItem iconName={FaPhone} label={"Calls"} />
