@@ -24,11 +24,11 @@ export const SideBar = () => {
 
   return (
     <div
-      className={`bg-bg_sidebar block flex text-inactive_text items-center h-full w-full
+      className={`z-10 bg-bg_sidebar flex text-inactive_text items-center w-full
         ${
           isSideBarOpen
             ? "h-full flex-col justify-center fixed"
-            : "h-[10vh] flex-row justify-center items-center block"
+            : "h-[9vh] flex-row justify-center items-center sticky"
         }`}
     >
       <CgClose

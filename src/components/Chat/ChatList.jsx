@@ -32,6 +32,7 @@ const ChatList = () => {
           {/* Render each chat using the Hcat component */}
           {chats.map((chat) => (
             <ChatListItem
+              id={chat.id}
               key={chat.id}
               name={chat.name}
               lastMessage={chat.lastMessage}

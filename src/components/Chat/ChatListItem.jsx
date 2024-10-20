@@ -1,9 +1,19 @@
-import React from "react";
-import Image from "next/image"; // For Next.js optimized image loading
+"use client";
 
-const ChatListItem = ({ name, lastMessage, messageSender }) => {
+import Image from "next/image"; // For Next.js optimized image loading
+import { useRouter } from "next/navigation";
+
+const ChatListItem = ({ id, name, lastMessage, messageSender }) => {
+  const router = useRouter();
+  const goToChat = (chatId) => {
+    router.push(`/chats/${id}`);
+  };
+
   return (
-    <div className="flex items-center justify-center w-full cursor-pointer rounded-lg p-2">
+    <button
+      className="flex items-center justify-center w-full cursor-pointer rounded-lg p-2"
+      onClick={goToChat}
+    >
       {/* Image placeholder */}
       <div className="mr-2">
         <Image
@@ -21,7 +31,7 @@ const ChatListItem = ({ name, lastMessage, messageSender }) => {
           {messageSender}: {lastMessage}
         </span>
       </div>
-    </div>
+    </button>
   );
 };
 

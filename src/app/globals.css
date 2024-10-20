@@ -11,6 +11,9 @@
   --bg_children: #ffffff;
   --active_text: #242424;
   --inactive_text: #c5c5c5;
+  --chat_incoming: #f5f5f5;
+  --chat_outgoing: #e9ebfa;
+  --chat_border: #e3e3e3;
 }
 
 /* Dark Mode */
@@ -22,6 +25,9 @@
   --bg_children: #1f1f1f;
   --active_text: #eeeeee;
   --inactive_text: #7b7b7b;
+  --chat_incoming: #292929;
+  --chat_outgoing: #2b2b40;
+  --chat_border: #4b4b4b;
 }
 
 /* Handle Safe Area Insets for iPhones with a notch */
