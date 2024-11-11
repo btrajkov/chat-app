@@ -115,6 +115,108 @@ export const messages = [
     user_id: 2,
     content: "Sounds nice.",
   },
+
+  {
+    chat_id: 2,
+    user_id: 3,
+    content: "Hey, how are you?",
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+    content: "Hi, I'm doing great! How about you?",
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+    content: "I'm good too, thanks!",
+  },
+  {
+    chat_id: 2,
+    user_id: 3,
+    content: "That's great to hear! Have you been busy lately?",
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+    content: "Yeah, work has been keeping me occupied. How about you?",
+  },
+  {
+    chat_id: 2,
+    user_id: 3,
+    content: "Same here, it's been hectic but manageable.",
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+    content: "Any plans for the weekend?",
+  },
+  {
+    chat_id: 2,
+    user_id: 3,
+    content: "Yeah, I'm thinking of going hiking. You?",
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+    content: "Sounds fun! I might just relax and catch up on some reading.",
+  },
+  {
+    chat_id: 2,
+    user_id: 3,
+    content: "Sounds nice.",
+  },
+
+  {
+    chat_id: 3,
+    user_id: 3,
+    content: "Hey, how are you?",
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
+    content: "Hi, I'm doing great! How about you?",
+  },
+  {
+    chat_id: 3,
+    user_id: 3,
+    content: "I'm good too, thanks!",
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
+    content: "That's great to hear! Have you been busy lately?",
+  },
+  {
+    chat_id: 3,
+    user_id: 3,
+    content: "Yeah, work has been keeping me occupied. How about you?",
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
+    content: "Same here, it's been hectic but manageable.",
+  },
+  {
+    chat_id: 3,
+    user_id: 3,
+    content: "Any plans for the weekend?",
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
+    content: "Yeah, I'm thinking of going hiking. You?",
+  },
+  {
+    chat_id: 3,
+    user_id: 3,
+    content: "Sounds fun! I might just relax and catch up on some reading.",
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
+    content: "Sounds nice.",
+  },
 ];
 
 export const chatsUsers = [
@@ -125,5 +227,21 @@ export const chatsUsers = [
   {
     chat_id: 1,
     user_id: 2,
+  },
+  {
+    chat_id: 2,
+    user_id: 3,
+  },
+  {
+    chat_id: 2,
+    user_id: 4,
+  },
+  {
+    chat_id: 3,
+    user_id: 3,
+  },
+  {
+    chat_id: 3,
+    user_id: 1,
   },
 ];
