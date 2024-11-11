@@ -15,7 +15,7 @@ const ChatListItem = ({ id, name, lastMessage, messageSender }) => {
 
   return (
     <Link
-      className={`flex text-start w-full cursor-pointer rounded-lg p-2 ${isActive ? "bg-teal-700" : ""}`}
+      className={`flex text-start w-full cursor-pointer rounded-lg p-2 ${isActive ? "bg-active_chat" : ""}`}
       onClick={goToChat}
       href={`/chat-panel/${id}`}
     >

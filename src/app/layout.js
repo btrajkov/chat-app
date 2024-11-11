@@ -1,7 +1,7 @@
 import "./ui/globals.css";
 import { SearchBar } from "@/components/Navigation/SearchBar";
 import { SideBar } from "@/components/Navigation/SideBar";
-import ChatPanelPage from "@/app/chats/page";
+import ChatPanelPage from "@/app/chats [Deprecated]/page";
 import "./globals.css";
 import ThemeProvider from "@/components/utils/ThemeProvider";
 

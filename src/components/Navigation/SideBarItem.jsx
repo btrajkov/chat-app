@@ -5,24 +5,29 @@ import { usePathname } from "next/navigation";
 
 export const SideBarItem = ({ iconName: Icon, label, link }) => {
   const pathname = usePathname();
-  const isActive = pathname === "/" + link;
+  const chatLink = link.includes("/chat-panel");
+  let linkRefined = link; // Because changing link directly would yield wrong url
 
-  console.log(pathname);
+  // Link should be active no matter which chatId
+  if (chatLink) linkRefined = "/chat-panel";
+
+  const isActive = pathname.includes(linkRefined);
+
+  // Define the base and active classes separately
+  const baseClasses = `
+    flex p-4 gap-6 items-center
+    text-[20px]
+    cursor-pointer
+    border-l-[5px]
+    md:flex-col md:gap-1 md:text-[10px] md:p-2.5
+  `;
+
+  const activeClasses = isActive
+    ? "border-l-[rgba(82,88,148,255)] text-[rgba(82,88,148,255)]"
+    : "border-l-transparent text-inactive_text";
 
   return (
-    <Link
-      // className="flex flex-col p-2 gap-0.5 items-center text-[10px] cursor-pointer border-l-[5px] border-l-transparent
-      //  active:border-l-[rgba(82,88,148,255)]"
-      href={link}
-      className={`flex p-4 gap-6 items-center
-        text-[20px]
-        text-inactive_text
-        cursor-pointer
-        border-l-[5px] border-l-transparent
-        md:flex-col md:gap-1 md:text-[10px] md:p-2.5
-        ${isActive ? "border-l-[rgba(82,88,148,255)]" : ""}
-        `}
-    >
+    <Link href={link} className={`${baseClasses} ${activeClasses}`}>
       <Icon className="text-xl" />
       <span className="text-inactive_text">{label}</span>
     </Link>

@@ -5,21 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/chat-panel/[chatId]/page.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/chat-panel/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/chats/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/chats [Deprecated]/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/chats/[chatId]/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/chats/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

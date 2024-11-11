@@ -73,24 +73,24 @@ export const SideBar = () => {
           iconName={FaBell}
           pageName="neradi"
           label={"Activity"}
-          link={"activity"}
+          link={"/activity"}
         />
         <SideBarItem
           iconName={FaComments}
           pageName="chats"
           label={"Chat"}
-          link={"chat-panel"}
+          link={"/chat-panel/1"}
         />
-        <SideBarItem iconName={FaUsers} label={"Teams"} link={"teams"} />
+        <SideBarItem iconName={FaUsers} label={"Teams"} link={"/teams"} />
         <SideBarItem
           iconName={FaCalendarAlt}
           label={"Calendar"}
-          link={"calendar"}
+          link={"/calendar"}
         />
-        <SideBarItem iconName={FaPhone} label={"Calls"} link={"calls"} />
-        <SideBarItem iconName={FaCloud} label={"OneDrive"} link={"onedrive"} />
-        <SideBarItem iconName={FaEllipsisH} label={"More"} link={"more"} />
-        <SideBarItem iconName={FaPlusSquare} label={"Apps"} link={"apps"} />
+        <SideBarItem iconName={FaPhone} label={"Calls"} link={"/calls"} />
+        <SideBarItem iconName={FaCloud} label={"OneDrive"} link={"/onedrive"} />
+        <SideBarItem iconName={FaEllipsisH} label={"More"} link={"/more"} />
+        <SideBarItem iconName={FaPlusSquare} label={"Apps"} link={"/apps"} />
       </ul>
     </div>
   );

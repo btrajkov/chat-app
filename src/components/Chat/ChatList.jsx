@@ -15,7 +15,7 @@ const ChatList = ({ onSelectChat }) => {
         setChats(chatData);
         console.log(chatData);
       } catch (error) {
-        console.error("Failed to load chats:", error);
+        console.error("Failed to load chats [Deprecated]:", error);
       }
     };
     loadChats();
@@ -26,16 +26,18 @@ const ChatList = ({ onSelectChat }) => {
       <h1 className="font-semibold text-xl text-gray-100 pl-8 pt-4">Chats</h1>
       <div className="p-3 w-full h-screen overflow-auto">
         <div className="space-y-4 text-sm pl-2 flex flex-col gap-5 items-start justify-start pt-3">
-          {chats.map((chat) => (
-            <ChatListItem
-              key={chat.chat_id}
-              id={chat.chat_id}
-              name={chat.name || chat.message_sender} // Use name or fallback to message sender
-              lastMessage={chat.last_message}
-              messageSender={chat.message_sender}
-              onClick={() => onSelectChat(chat.chat_id)}
-            />
-          ))}
+          {chats
+            ? chats.map((chat) => (
+                <ChatListItem
+                  key={chat.chat_id}
+                  id={chat.chat_id}
+                  name={chat.name || chat.message_sender} // Use name or fallback to message sender
+                  lastMessage={chat.last_message}
+                  messageSender={chat.message_sender}
+                  onClick={() => onSelectChat(chat.chat_id)}
+                />
+              ))
+            : "Loading Chats"}
         </div>
       </div>
     </>

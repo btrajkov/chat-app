@@ -30,7 +30,7 @@ export async function fetchChatList(user_id) {
   }
 }
 
-// function that returns the data needed for the /chats/[chatId] page
+// function that returns the data needed for the /chats [Deprecated]/[chatId] page
 // returns messageId, chatId, userId, content, status (sent, delivered, seen), sentAt timestamp, chatName(null if its a dm, not null if its a groupchat),
 // and messageSender for every message in a chat
 export async function fetchChat(chat_id) {
