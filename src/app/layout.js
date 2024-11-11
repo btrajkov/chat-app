@@ -1,7 +1,7 @@
 import "./ui/globals.css";
 import { SearchBar } from "@/components/Navigation/SearchBar";
 import { SideBar } from "@/components/Navigation/SideBar";
-import ChatPanelPage from "@/app/chat-panel/page";
+import ChatPanelPage from "@/app/chats/page";
 import "./globals.css";
 import ThemeProvider from "@/components/utils/ThemeProvider";
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={`h-screen w-screen overflow-hidden md:flex`}>
         <ThemeProvider />
         {/*<Navigations /> for mobile*/}
-        <div className="bg-bg_sidebar md:hidden">
+        <div className="bg-bg_sidebar md:hidden md:w-screen">
           <SideBar />
         </div>
         {/*<Navigations /> for desktop*/}
@@ -28,13 +28,19 @@ export default function RootLayout({ children }) {
           md:flex md:justify-end md:items-center
           md:pr-10"
           >
-            <SearchBar />
+            <div
+              className="hidden md:h-[7vh] md:w-screen
+          md:flex md:justify-end md:items-center
+          md:pr-10"
+            >
+              <SearchBar />
+            </div>
           </div>
-          <div className="md:flex">
-            <div className="hidden md:flex h-[93vh]">
+          <div className="md:flex md:w-full">
+            <div className="hidden md:flex h-[93vh] md:w-[5vw]">
               <SideBar />
             </div>
-            <div>{children}</div>
+            <div className={"md:w-[95vw]"}>{children}</div>
           </div>
         </div>
       </body>

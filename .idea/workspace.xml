@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="" />
+    <list default="true" id="c072e7f4-ac90-482d-bdae-715d089b4d67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/chat-panel/[chatId]/page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/chat-panel/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/chats/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/chat-panel/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/chats/[chatId]/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat/ChatListItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideBarItem.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,22 +53,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.SideBar.jsx.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/markosudar/Desktop/chat-app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/markosudar/Desktop/chat-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/markosudar/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.SideBar.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/frontend-marko-chats&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/markosudar/Desktop/chat-app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;/Users/markosudar/Desktop/chat-app/node_modules/eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/markosudar/Desktop/chat-app/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/markosudar/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -64,6 +82,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/chats" />
+      <recent name="$PROJECT_DIR$/src/app/chat-panel/[chatId]" />
+      <recent name="$PROJECT_DIR$/src/app/chat-panel" />
       <recent name="$PROJECT_DIR$/src/components/Navigation" />
       <recent name="$PROJECT_DIR$/src/app/ui" />
     </key>
@@ -71,7 +92,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
       </set>
     </attachedChunks>
   </component>
@@ -84,6 +105,9 @@
       <option name="presentableId" value="Default" />
       <updated>1729342838464</updated>
       <workItem from="1729342839649" duration="1857000" />
+      <workItem from="1731117233995" duration="7602000" />
+      <workItem from="1731172922407" duration="2562000" />
+      <workItem from="1731294057866" duration="8135000" />
     </task>
     <servers />
   </component>
