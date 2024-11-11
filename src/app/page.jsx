@@ -1,8 +1,8 @@
-import ChatPanelPage from "@/app/chat-panel/page";
+import ChatPanelPage from "@/app/chats [Deprecated]/page";
 
 export default function Home() {
   return (
-    <div className="h-[93vh]">
+    <div className="h-full w-full">
       <ChatPanelPage />
     </div>
   );

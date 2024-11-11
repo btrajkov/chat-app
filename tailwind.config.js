@@ -20,6 +20,7 @@ module.exports = {
         incoming_message: "var(--chat_incoming)",
         outgoing_message: "var(--chat_outgoing)",
         chat_border: "var(--chat_border)",
+        active_chat: "var(--active_chat)",
       },
     },
   },

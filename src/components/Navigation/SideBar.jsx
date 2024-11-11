@@ -69,14 +69,28 @@ export const SideBar = () => {
         ${isSideBarOpen ? "flex" : "hidden"}
         md:block md:pt-0 md:gap-2 md:h-screen `}
       >
-        <SideBarItem iconName={FaBell} pageName="neradi" label={"Activity"} />
-        <SideBarItem iconName={FaComments} pageName="chats" label={"Chat"} />
-        <SideBarItem iconName={FaUsers} label={"Teams"} />
-        <SideBarItem iconName={FaCalendarAlt} label={"Calendar"} />
-        <SideBarItem iconName={FaPhone} label={"Calls"} />
-        <SideBarItem iconName={FaCloud} label={"OneDrive"} />
-        <SideBarItem iconName={FaEllipsisH} label={"More"} />
-        <SideBarItem iconName={FaPlusSquare} label={"Apps"} />
+        <SideBarItem
+          iconName={FaBell}
+          pageName="neradi"
+          label={"Activity"}
+          link={"/activity"}
+        />
+        <SideBarItem
+          iconName={FaComments}
+          pageName="chats"
+          label={"Chat"}
+          link={"/chat-panel/1"}
+        />
+        <SideBarItem iconName={FaUsers} label={"Teams"} link={"/teams"} />
+        <SideBarItem
+          iconName={FaCalendarAlt}
+          label={"Calendar"}
+          link={"/calendar"}
+        />
+        <SideBarItem iconName={FaPhone} label={"Calls"} link={"/calls"} />
+        <SideBarItem iconName={FaCloud} label={"OneDrive"} link={"/onedrive"} />
+        <SideBarItem iconName={FaEllipsisH} label={"More"} link={"/more"} />
+        <SideBarItem iconName={FaPlusSquare} label={"Apps"} link={"/apps"} />
       </ul>
     </div>
   );
