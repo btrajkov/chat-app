@@ -15,6 +15,8 @@
   --chat_outgoing: #e9ebfa;
   --chat_border: #e3e3e3;
   --active_chat: #ffffff;
+  --purple_color: #676bc9;
+  --purple_color_active: #525894;
 }
 
 /* Dark Mode */
@@ -30,6 +32,8 @@
   --chat_outgoing: #2b2b40;
   --chat_border: #4b4b4b;
   --active_chat: #242424;
+  --purple_color: #525894;
+  --purple_color_active: #676bc9;
 }
 
 /* Handle Safe Area Insets for iPhones with a notch */

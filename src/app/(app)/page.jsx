@@ -1,4 +1,4 @@
-import ChatPanelPage from "@/app/chats [Deprecated]/page";
+import ChatPanelPage from "@/app/(app)/chats [Deprecated]/page";
 
 export default function Home() {
   return (

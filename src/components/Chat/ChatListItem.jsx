@@ -1,5 +1,7 @@
 "use client";
 
+// FIX: Not redirect when going from chat to chat but session[0].isLoggedIn false
+
 import Image from "next/image"; // For Next.js optimized image loading
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -8,15 +10,9 @@ const ChatListItem = ({ id, name, lastMessage, messageSender }) => {
   const pathname = usePathname();
   const isActive = pathname === "/chat-panel/" + id;
 
-  const router = useRouter();
-  const goToChat = (chatId) => {
-    router.push(`/chats/${id}`);
-  };
-
   return (
     <Link
       className={`flex text-start w-full cursor-pointer rounded-lg p-2 ${isActive ? "bg-active_chat" : ""}`}
-      onClick={goToChat}
       href={`/chat-panel/${id}`}
     >
       {/* Image placeholder */}

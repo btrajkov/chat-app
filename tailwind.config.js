@@ -21,6 +21,8 @@ module.exports = {
         outgoing_message: "var(--chat_outgoing)",
         chat_border: "var(--chat_border)",
         active_chat: "var(--active_chat)",
+        purple_color: "var(--purple_color)",
+        purple_color_active: "var(--purple_color_active)",
       },
     },
   },

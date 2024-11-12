@@ -23,7 +23,7 @@ export const SideBarItem = ({ iconName: Icon, label, link }) => {
   `;
 
   const activeClasses = isActive
-    ? "border-l-[rgba(82,88,148,255)] text-[rgba(82,88,148,255)]"
+    ? "border-l-purple_color text-purple_color]"
     : "border-l-transparent text-inactive_text";
 
   return (

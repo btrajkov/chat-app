@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import ChatListItem from "./ChatListItem";
 import { fetchChatList } from "@/app/lib/data"; // Adjust path as needed
 
-const ChatList = ({ onSelectChat }) => {
+const ChatList = () => {
   const [chats, setChats] = useState([]);
 
   useEffect(() => {
@@ -34,7 +34,6 @@ const ChatList = ({ onSelectChat }) => {
                   name={chat.name || chat.message_sender} // Use name or fallback to message sender
                   lastMessage={chat.last_message}
                   messageSender={chat.message_sender}
-                  onClick={() => onSelectChat(chat.chat_id)}
                 />
               ))
             : "Loading Chats"}
