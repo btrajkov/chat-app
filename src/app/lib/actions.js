@@ -47,12 +47,12 @@ const SaveMessage = MessageSchema.omit({ message_id: true, sent_at: true });
 
 // function that handles emitting the messages and storing them in db
 // needs further refactoring
-export async function saveMessage(chat_id, user_id, content, status) {
+export async function saveMessage(chatId, userId, contentParam, statusParam) {
   const validatedFields = SaveMessage.safeParse({
-    chat_id: chat_id,
-    user_id: user_id,
-    content: content,
-    status: status,
+    chat_id: chatId,
+    user_id: userId,
+    content: contentParam,
+    status: statusParam,
   });
 
   if (!validatedFields.success) {

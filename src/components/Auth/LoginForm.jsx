@@ -58,7 +58,7 @@ export default function LoginForm() {
         </button>
       </form>
       <p className="mt-4 text-center text-inactive_text">
-        Don't have an account?{" "}
+        {"Don't have an account? "}
         <Link
           href="/auth/register"
           className="text-purple_color hover:underline"
