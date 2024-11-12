@@ -1,1 +1,1 @@
-export const sessionData = [{ loggedIn: true }, { currentUserId: "1" }];
+export const sessionData = [{ loggedIn: false }, { currentUserId: "1" }];

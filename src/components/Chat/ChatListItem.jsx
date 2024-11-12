@@ -1,7 +1,5 @@
 "use client";
 
-// FIX: Not redirect when going from chat to chat but session[0].isLoggedIn false
-
 import Image from "next/image"; // For Next.js optimized image loading
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
