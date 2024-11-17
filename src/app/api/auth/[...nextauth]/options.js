@@ -64,22 +64,21 @@ export const options = {
   },
   callbacks: {
     async redirect({ url, baseUrl }) {
-      console.log("Redirect Callback Triggered:");
-      console.log("URL:", url);
-      console.log("Base URL:", baseUrl);
-
-      if (url === `${baseUrl}/api/auth/callback/github`) {
-        console.log("Redirecting GitHub login to /chat-panel/1");
-        return `${baseUrl}/chat-panel/1`;
-      }
-
-      if (url.startsWith(baseUrl)) {
-        console.log("Redirecting to valid internal URL:", url);
-        return url;
-      }
-
-      console.log("Redirecting to base URL:", baseUrl);
-      return baseUrl;
+      // console.log("Redirect Callback Triggered:");
+      // console.log("URL:", url);
+      // console.log("Base URL:", baseUrl);
+      //
+      // if (url.startsWith(`${baseUrl}/api/auth/callback/github`)) {
+      //   console.log("Redirecting GitHub login to /chat-panel/1");
+      //   return `${baseUrl}/chat-panel/1`;
+      // } else if (url.startsWith(baseUrl)) {
+      //   console.log("Redirecting to valid internal URL:", url);
+      //   return url;
+      // }
+      //
+      // console.log("Redirecting to base URL:", baseUrl);
+      // return baseUrl;
+      return `${baseUrl}/chat-panel/1`;
     },
   },
 
