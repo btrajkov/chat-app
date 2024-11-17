@@ -1,22 +1,40 @@
-// components/LoginForm.js
-"use client";
+"use client"; // Ensure this is at the top of the file
+
 import { useState } from "react";
 import Link from "next/link";
-import { useActionState } from "react";
-import { authenticate } from "@/app/lib/actions";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation"; // Use 'next/navigation' in the App Router (Next.js 13+)
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [errorMessage, formAction, isPending] = useActionState(
-    authenticate,
-    undefined,
-  );
+  // Safely use useRouter only in environments where it exists
+  const router = typeof window !== "undefined" ? useRouter() : null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
+    setIsLoading(true);
+
+    const result = await signIn("credentials", {
+      redirect: false,
+      email, // Updated to email
+      password,
+    });
+
+    setIsLoading(false);
+
+    if (result?.ok) {
+      router?.push("/chat-panel/1"); // Redirect on successful login
+    } else {
+      setErrorMessage("Invalid email or password");
+    }
+  };
+
+  const handleGitHubLogin = () => {
+    signIn("github", { callbackUrl: "/chat-panel/1" }); // Fixed callback URL
   };
 
   return (
@@ -24,7 +42,9 @@ export default function LoginForm() {
       <h2 className="text-2xl font-bold mb-6 text-center text-active_text">
         Login
       </h2>
-      <form action={formAction} className="space-y-3">
+
+      {/* Email/Password Login */}
+      <form onSubmit={handleSubmit} className="space-y-3">
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -60,13 +80,29 @@ export default function LoginForm() {
           />
         </div>
         <button
-          disabled={isPending}
+          disabled={isLoading}
           type="submit"
           className="w-full py-2 mt-4 bg-purple_color hover:bg-purple_color_active text-white font-semibold rounded-md transition-colors"
         >
-          Login
+          {isLoading ? "Logging in..." : "Login"}
         </button>
       </form>
+
+      {/* GitHub Login */}
+      <div className="flex justify-center mt-6">
+        <button
+          onClick={handleGitHubLogin}
+          className="flex items-center justify-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded-md transition-colors"
+        >
+          Login with GitHub
+        </button>
+      </div>
+
+      {/* Error Message */}
+      {errorMessage && (
+        <p className="mt-4 text-center text-red-500">{errorMessage}</p>
+      )}
+
       <p className="mt-4 text-center text-inactive_text">
         {"Don't have an account? "}
         <Link
@@ -76,17 +112,6 @@ export default function LoginForm() {
           Register
         </Link>
       </p>
-      <div
-        className="flex h-8 items-end space-x-1"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        {errorMessage && (
-          <>
-            <p className="text-sm text-red-500">{errorMessage}</p>
-          </>
-        )}
-      </div>
     </div>
   );
 }

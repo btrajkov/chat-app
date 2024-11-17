@@ -1,6 +1,4 @@
 // app/(auth)/layout.js
-"use client";
-
 import ThemeProvider from "@/components/utils/ThemeProvider";
 import "../globals.css";
 

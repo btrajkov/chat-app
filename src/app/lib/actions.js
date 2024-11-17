@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import Pusher from "pusher";
-import { signIn } from "../../../auth";
+import { signIn } from "../../../aauth";
 import { AuthError } from "next-auth";
 
 const pusher = new Pusher({
