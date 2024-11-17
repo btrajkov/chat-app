@@ -1,9 +1,9 @@
-// components/RegisterForm.js
 "use client";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function RegisterForm() {
+  const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +11,8 @@ export default function RegisterForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle registration logic here
+    const formData = { fullName, username, email, password };
+    console.log("Registering user with data:", formData);
   };
 
   return (
@@ -21,6 +23,22 @@ export default function RegisterForm() {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label
+            htmlFor="fullName"
+            className="block text-active_text font-semibold"
+          >
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple_color"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label
             htmlFor="username"
             className="block text-active_text font-semibold"
           >
@@ -29,7 +47,7 @@ export default function RegisterForm() {
           <input
             type="text"
             id="username"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:bg-purple_color"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple_color"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
