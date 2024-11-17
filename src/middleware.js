@@ -5,8 +5,10 @@ export async function middleware(req) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
   const { pathname } = req.nextUrl;
 
-  console.log("Middleware Pathname:", pathname);
-  console.log("Token Valid:", token ? true : false);
+  // console.log("Middleware folder: --------------------");
+  // console.log("Middleware Pathname:", pathname);
+  // console.log("Token Valid:", token ? true : false);
+  // console.log("----------------------------------------");
 
   // Allow public routes
   if (
