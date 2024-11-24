@@ -13,6 +13,8 @@ async function drop() {
     DROP TABLE IF EXISTS chats`;
   await client.sql`
     DROP TABLE IF EXISTS users`;
+  await client.sql`
+    DROP TABLE IF EXISTS chat_channels`;
 }
 
 async function seedUsers() {
@@ -102,6 +104,14 @@ async function seedChatsUsers() {
   return insertedChatsUsers;
 }
 
+async function seedChatChannels() {
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS chat_channels (
+        name VARCHAR(255) PRIMARY KEY,
+        date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );`;
+}
+
 export async function GET() {
   try {
     await client.sql`BEGIN`;
@@ -110,6 +120,7 @@ export async function GET() {
     await seedChats();
     await seedMessages();
     await seedChatsUsers();
+    await seedChatChannels();
     await client.sql`COMMIT`;
 
     return Response.json({ message: "Database seeded successfully" });
