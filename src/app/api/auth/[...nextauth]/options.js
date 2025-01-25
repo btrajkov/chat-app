@@ -19,7 +19,7 @@ const CredentialsSchema = z.object({
   }),
 });
 
-const Login = MessageSchema.omit({
+const Login = CredentialsSchema.omit({
   firstName: true,
   lastName: true,
 });
