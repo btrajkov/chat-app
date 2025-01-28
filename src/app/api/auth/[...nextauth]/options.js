@@ -19,7 +19,7 @@ const CredentialsSchema = z.object({
   }),
 });
 
-const Login = MessageSchema.omit({
+const Login = CredentialsSchema.omit({
   firstName: true,
   lastName: true,
 });
@@ -77,30 +77,6 @@ export const options = {
         } catch (err) {
           console.error("Database Error:", err);
           throw new Error("Failed to return the user.");
-        }
-      },
-
-      async register(credentials) {
-        const validatedFields = CredentialsSchema.safeParse({
-          email: credentials?.email,
-          password: credentials?.password,
-          firstName: credentials?.firstName,
-          lastName: credentials?.lastName,
-        });
-
-        if (!validatedFields.success) {
-          console.error("Registration data not valid.");
-          return null;
-        }
-
-        const { email, password, firstName, lastName } = validatedFields.data;
-
-        try {
-          await sql`insert into users ("password", email, firstname, lastname) values (${bcrypt.hash(password, 10)}, ${email}, ${firstName}, ${lastName});`;
-          return true;
-        } catch (err) {
-          console.error("Database Error:", err);
-          throw new Error("Failed to register the user in database.");
         }
       },
     }),

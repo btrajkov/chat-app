@@ -12,7 +12,7 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Safely use useRouter only in environments where it exists
-  const router = typeof window !== "undefined" ? useRouter() : null;
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

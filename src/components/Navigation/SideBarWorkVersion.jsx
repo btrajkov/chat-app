@@ -10,13 +10,13 @@ import {
   FaEllipsisH,
   FaPlusSquare,
 } from "react-icons/fa";
-import SideBarItem from "./SideBarItem";
+import SideBarItemWorkVersion from "./SideBarItemWorkVersion";
 import { CgClose } from "react-icons/cg";
 import { useEffect, useState } from "react";
 import { SearchBar } from "@/components/Navigation/SearchBar";
 import { useRouter } from "next/navigation";
 
-export const SideBar = () => {
+export const SideBarWorkVersion = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const router = useRouter();
 
@@ -25,7 +25,7 @@ export const SideBar = () => {
   };
 
   const toggleVisibility = () => {
-    setIsSideBarOpen((isOpen) => !isOpen);
+    setIsSideBarOpen(!isSideBarOpen);
   };
 
   return (
@@ -36,7 +36,7 @@ export const SideBar = () => {
             ? "h-full flex-col justify-center fixed"
             : "h-[9vh] flex-row justify-center items-center sticky"
         }
-        md:justify-start md:items-start md:flex md:h-full
+        home-md:justify-start home-md:items-start home-md:flex home-md:h-full
         `}
     >
       <CgClose
@@ -44,14 +44,14 @@ export const SideBar = () => {
         className={`text-3xl absolute right-5 top-2 font-semibold
         cursor-pointer
       ${isSideBarOpen ? "block" : "hidden"}
-      md:hidden`}
+      home-md:hidden`}
       />
       <div
         className={`w-full h-full flex flex-row items-center justify-between
         ${isSideBarOpen ? "hidden" : "block"}`}
       >
         <button
-          className={`text-4xl ml-3 mt-[-10px] md:hidden
+          className={`text-4xl ml-3 mt-[-10px] home-md:hidden
       ${isSideBarOpen ? "hidden" : "block"}
       `}
           onClick={toggleVisibility}
@@ -59,7 +59,7 @@ export const SideBar = () => {
           &#9776;
         </button>
         <div
-          className={`${isSideBarOpen ? "hidden" : "block"} pr-10 md:hidden`}
+          className={`${isSideBarOpen ? "hidden" : "block"} pr-10 home-md:hidden`}
         >
           <SearchBar />
         </div>
@@ -67,48 +67,53 @@ export const SideBar = () => {
       <ul
         className={`flex h-full flex-col justify-around pt-10 pb-10
         ${isSideBarOpen ? "flex" : "hidden"}
-        md:block md:pt-0 md:gap-2 md:h-screen `}
+        home-md:block home-md:pt-0 home-md:gap-2 home-md:h-screen `}
       >
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaBell}
           pageName="neradi"
           label={"Activity"}
           link={"/activity"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaComments}
           pageName="chats"
           label={"Chat"}
           link={"/chat-panel/1"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem iconName={FaUsers} label={"Teams"} link={"/teams"} />
-        <SideBarItem
+        <SideBarItemWorkVersion
+          iconName={FaUsers}
+          label={"Teams"}
+          link={"/teams"}
+          handleToggleVisibility={toggleVisibility}
+        />
+        <SideBarItemWorkVersion
           iconName={FaCalendarAlt}
           label={"Calendar"}
           link={"/calendar"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaPhone}
           label={"Calls"}
           link={"/calls"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaCloud}
           label={"OneDrive"}
           link={"/onedrive"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaEllipsisH}
           label={"More"}
           link={"/more"}
           handleToggleVisibility={toggleVisibility}
         />
-        <SideBarItem
+        <SideBarItemWorkVersion
           iconName={FaPlusSquare}
           label={"Apps"}
           link={"/apps"}

@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { registerUser } from "@/app/lib/data";
+import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
   const [fullName, setFullName] = useState("");
@@ -8,12 +10,26 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const router = useRouter();
+
+  async function handleSubmit(e) {
     e.preventDefault();
     // Handle registration logic here
+
+    const firstName = fullName.split(" ")[0];
+    const lastName = fullName.split(" ")[1];
     const formData = { fullName, username, email, password };
-    console.log("Registering user with data:", formData);
-  };
+
+    const authSuccessful = await registerUser(formData);
+
+    if (authSuccessful) {
+      router?.push("/chat-panel/1"); // Redirect on successful login
+    } else {
+      console.log("Invalid email or password");
+    }
+
+    // console.log("Registering user with data:", formData);
+  }
 
   return (
     <div className="bg-bg_search p-8 rounded-lg shadow-lg w-full max-w-md">

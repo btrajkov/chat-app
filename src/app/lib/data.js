@@ -1,6 +1,8 @@
 "use server";
 
 import { sql } from "@vercel/postgres";
+import bcrypt from "bcrypt";
+import { z } from "zod";
 
 // function that returns the data needed for ChatList component
 // returns chatId, chatName(null if its a dm, not null if its a groupchat), last message sent and the correspondant's name for every chat of the signedin user
@@ -47,5 +49,47 @@ export async function fetchChat(chat_id) {
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch chat.");
+  }
+}
+
+// Register function
+const CredentialsSchema = z.object({
+  password: z.string({
+    required_error: "Password is required.",
+  }),
+  email: z.string({
+    required_error: "Email is required.",
+  }),
+  firstName: z.string({
+    required_error: "First name is required.",
+  }),
+  lastName: z.string({
+    required_error: "Last name is required.",
+  }),
+});
+
+export async function registerUser(credentials) {
+  const validatedFields = CredentialsSchema.safeParse({
+    email: credentials?.email,
+    password: credentials?.password,
+    firstName: credentials?.fullName,
+    lastName: credentials?.fullName,
+  });
+
+  if (!validatedFields.success) {
+    console.error("Registration data not valid.");
+    return null;
+  }
+
+  const { email, password, firstName, lastName } = validatedFields.data;
+
+  const passwordEncrypted = await bcrypt.hash(password, 10);
+
+  try {
+    await sql`insert into users ("password", email, firstname, lastname) values (${passwordEncrypted}, ${email}, ${firstName}, ${lastName});`;
+    return true;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to register the user in database.");
   }
 }

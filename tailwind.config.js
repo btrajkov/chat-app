@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         // Use CSS variables for flexibility
+        autofillBg: "transparent", // Or any desired background color
         bg_search: "var(--bg_search)",
         bg_sidebar: "var(--bg_sidebar)",
         bg_actionbar: "var(--bg_actionbar)",
@@ -23,6 +24,9 @@ module.exports = {
         active_chat: "var(--active_chat)",
         purple_color: "var(--purple_color)",
         purple_color_active: "var(--purple_color_active)",
+      },
+      screens: {
+        "home-md": "1200px",
       },
     },
   },

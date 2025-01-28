@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export const SideBarItem = ({ iconName: Icon, label, link }) => {
+export const SideBarItem = ({
+  iconName: Icon,
+  label,
+  link,
+  handleToggleVisibility,
+}) => {
   const pathname = usePathname();
   const chatLink = link.includes("/chat-panel");
   let linkRefined = link; // Because changing link directly would yield wrong url
@@ -23,11 +28,22 @@ export const SideBarItem = ({ iconName: Icon, label, link }) => {
   `;
 
   const activeClasses = isActive
-    ? "border-l-purple_color text-purple_color]"
+    ? "border-l-purple_color text-purple_color"
     : "border-l-transparent text-inactive_text";
 
+  const handleClick = (e) => {
+    if (handleToggleVisibility) {
+      e.preventDefault(); // Prevent the default navigation
+      handleToggleVisibility(); // Call the handler
+    }
+  };
+
   return (
-    <Link href={link} className={`${baseClasses} ${activeClasses}`}>
+    <Link
+      onClick={handleClick}
+      href={link}
+      className={`${baseClasses} ${activeClasses}`}
+    >
       <Icon className="text-xl" />
       <span className="text-inactive_text">{label}</span>
     </Link>

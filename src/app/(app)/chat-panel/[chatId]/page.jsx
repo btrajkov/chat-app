@@ -4,12 +4,18 @@ import React, { useEffect, useState } from "react";
 import { fetchChat } from "../../../lib/data";
 import { messages } from "@/app/seed/seedData"; // Adjust path as needed
 import { useParams } from "next/navigation";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { useMobileView } from "@/app/hooks/useMobileView";
 
-const ChatPage = () => {
+const ChatPage = ({
+  handleToggleLayoutMobile = () => {},
+  showChatMobile = null,
+}) => {
   const [chat, setChat] = useState(null);
   const params = useParams();
   let { chatId } = params;
   let currentUserId = "1";
+  const isMobileView = useMobileView();
 
   useEffect(() => {
     const loadChat = async () => {
@@ -24,11 +30,28 @@ const ChatPage = () => {
   }, [chatId]);
 
   if (!chat) return <div>Loading chat...</div>;
+  console.log(chat);
 
   return (
     <div className="flex flex-col h-[93vh] bg-bg_children w-full overflow-auto">
-      <div className="h-[50px] bg-bg_actionbar px-4 flex items-center">
-        <h2 className="text-active_text">{chat[0]?.chat_name || "Chat"}</h2>
+      <div className="h-[50px] bg-bg_actionbar px-4 flex justify-start items-center gap-[80vw]">
+        <div className={"block"}>
+          <h2 className="text-active_text font">
+            {chat[0]?.chat_name || "Chat"}
+          </h2>
+        </div>
+        {showChatMobile === true && isMobileView ? (
+          <div>
+            <button
+              className={"block text-2xl"}
+              onClick={handleToggleLayoutMobile}
+            >
+              <FaArrowCircleLeft />
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
 
       <div className="flex-1 flex flex-col overflow-auto gap-5 p-4 pt-6">
