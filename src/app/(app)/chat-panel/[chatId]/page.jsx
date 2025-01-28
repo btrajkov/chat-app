@@ -16,12 +16,14 @@ const ChatPage = ({
   let { chatId } = params;
   let currentUserId = "1";
   const isMobileView = useMobileView();
+  const [newMessage, setNewMessage] = useState("");
 
   useEffect(() => {
     const loadChat = async () => {
       try {
         const chatData = await fetchChat(`${chatId}`);
         setChat(chatData);
+        console.log(chatData);
       } catch (error) {
         console.error("Failed to load chat:", error);
       }
@@ -30,7 +32,11 @@ const ChatPage = ({
   }, [chatId]);
 
   if (!chat) return <div>Loading chat...</div>;
-  console.log(chat);
+
+  // Handle sending a new message
+  const handleSendMessage = async () => {
+    console.log("Sending message");
+  };
 
   return (
     <div className="flex flex-col h-[93vh] bg-bg_children w-full overflow-auto">
@@ -73,15 +79,28 @@ const ChatPage = ({
         ))}
       </div>
 
-      <div className="p-4 bg-bg_children">
-        <input
-          type="text"
-          placeholder="Type a message"
-          className="w-full px-4 py-2 border-2
+      <div className="p-4 bg-bg_children flex gap-6">
+        <div className="w-4/5">
+          <input
+            type="text"
+            placeholder="Type a message"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+            className="w-full px-4 py-2 border-2
           border-chat_border rounded-lg
           bg-incoming_message focus:border-b-4
           focus:border-b-[#6266b2] focus:outline-none"
-        />
+          />
+        </div>
+        <div className="w-1/5">
+          <button
+            onClick={handleSendMessage}
+            className="px-4 py-2 bg-gray-600 text-white rounded-md right-4 cursor-pointer"
+          >
+            Send Message
+          </button>
+        </div>
       </div>
     </div>
   );

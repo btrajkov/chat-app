@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`h-screen w-screen overflow-hidden home-md:flex`}>
-        <ThemeProvider />
+        {/*<ThemeProvider /> Turn this on for color modes*/}
         {/*<Navigations /> for mobile*/}
         <div className="bg-bg_sidebar home-md:hidden home-md:w-screen">
           <SideBarWorkVersion />
