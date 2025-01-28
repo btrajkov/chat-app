@@ -2,33 +2,9 @@
 
 import { z } from "zod";
 import { sql } from "@vercel/postgres";
-import Pusher from "pusher";
-import { signIn } from "../../../aauth";
-import { AuthError } from "next-auth";
+import { getPusherInstance } from "./pusher/server";
 
-const pusher = new Pusher({
-  appId: process.env.PUSHER_APP_ID,
-  key: process.env.PUSHER_APP_KEY,
-  secret: process.env.PUSHER_APP_SECRET,
-  cluster: process.env.PUSHER_APP_CLUSTER,
-  useTLS: true,
-});
-
-export async function authenticate(prevState, formData) {
-  try {
-    await signIn("credentials", formData);
-  } catch (err) {
-    if (err instanceof AuthError) {
-      switch (err.type) {
-        case "CredentialsSignin":
-          return "Invalid credentials.";
-        default:
-          return "Something went wrong.";
-      }
-    }
-    throw err;
-  }
-}
+const pusherServer = getPusherInstance();
 
 const MessageSchema = z.object({
   chat_id: z.number({
@@ -40,19 +16,15 @@ const MessageSchema = z.object({
   content: z.string({
     required_error: "Message content is required.",
   }),
-  status: z.string(),
+  // status: z.string(),
 });
 
-const SaveMessage = MessageSchema.omit({ message_id: true, sent_at: true });
-
-// function that handles emitting the messages and storing them in db
-// needs further refactoring
-export async function saveMessage(chatId, userId, contentParam, statusParam) {
-  const validatedFields = SaveMessage.safeParse({
+export async function sendMessage(chatId, userId, contentParam, receiverId) {
+  const validatedFields = MessageSchema.safeParse({
     chat_id: chatId,
     user_id: userId,
     content: contentParam,
-    status: statusParam,
+    // status: statusParam,
   });
 
   if (!validatedFields.success) {
@@ -62,16 +34,37 @@ export async function saveMessage(chatId, userId, contentParam, statusParam) {
     };
   }
 
-  const { chat_id, user_id, content, status } = validatedFields.data;
+  if (
+    Number.isNaN(receiverId) ||
+    receiverId === 0 ||
+    receiverId === undefined
+  ) {
+    return {
+      message: "ReceiverId not valid.",
+    };
+  }
+
+  const { chat_id, user_id, content } = validatedFields.data;
 
   try {
     await sql`
-    INSERT INTO messages (chat_id, user_id, content, status)
-    VALUES (${chat_id}, ${user_id}, ${content}, ${status})
+    INSERT INTO messages (chat_id, user_id, content)
+    VALUES (${chat_id}, ${user_id}, ${content})
     `;
+
+    const channelName = `private-${userId}${receiverId}`;
+
+    await sql`INSERT INTO chat_channels (name) VALUES (${channelName}) ON CONFLICT (name) DO NOTHING`;
+
+    await pusherServer.trigger(channelName, "new-message", {
+      message: contentParam,
+      user: userId,
+      receiver: receiverId,
+      date: new Date(),
+    });
   } catch (err) {
     return {
-      message: "Database Error: Failed to Save Message.",
+      message: "Error: Failed to Send Message.",
     };
   }
 }
