@@ -9,8 +9,15 @@ import { AblyProvider, ChannelProvider, useChannel } from "ably/react";
 
 const ChatPanelPage = () => {
   const isMobileView = useMobileView(); // Always call hooks
+  const prefix = process.env.API_ROOT || "";
   const [showChatPageMobile, setShowChatPageMobile] = useState(false);
-  const client = new Ably.Realtime({ authUrl: "/api/chat-auth" });
+  const clientId =
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15);
+  const client = new Ably.Realtime({
+    authUrl: `${prefix}/api/chat-auth`,
+    clientId: "marko",
+  });
 
   useLayoutEffect(() => {
     setShowChatPageMobile(false);
