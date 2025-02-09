@@ -1,6 +1,6 @@
 import React from "react";
 import ChatList from "@/components/Chat/ChatList";
-import ChatPage from "@/app/(app)/chat-panel/[chatId]/page";
+import ChatPage from "@/app/(app)/chat-panel/[chatId] Deprecated again/page";
 
 const ChatPanelPage = () => {
   return (
@@ -12,7 +12,7 @@ const ChatPanelPage = () => {
 
       {/* Right Panel - Chat Messages */}
       <div className="hidden md:block md:flex-1">
-        {/* This will be replaced by the [chatId] page content when a chat is selected */}
+        {/* This will be replaced by the [chatId] Deprecated again page content when a chat is selected */}
         <div className="w-full flex items-center justify-center text-active_text">
           <ChatPage />
         </div>
