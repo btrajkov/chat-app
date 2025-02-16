@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { registerUser } from "@/app/lib/data";
 import { useRouter } from "next/navigation";
+import { registerUser } from "@/app/api/auth/register/register";
 
 export default function RegisterForm() {
-  const [fullName, setFullName] = useState("");
-  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,15 +15,13 @@ export default function RegisterForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     // Handle registration logic here
+    const formData = { firstName, lastName, email, password };
 
-    const firstName = fullName.split(" ")[0];
-    const lastName = fullName.split(" ")[1];
-    const formData = { fullName, username, email, password };
+    const resp = await registerUser(formData);
+    console.log(resp);
 
-    const authSuccessful = await registerUser(formData);
-
-    if (authSuccessful) {
-      router?.push("/chat-panel/1"); // Redirect on successful login
+    if (resp) {
+      router?.push(`/chat-panel/${resp}`); // Redirect on successful login
     } else {
       console.log("Invalid email or password");
     }
@@ -39,33 +37,33 @@ export default function RegisterForm() {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label
-            htmlFor="fullName"
+            htmlFor="firstName"
             className="block text-active_text font-semibold"
           >
-            Full Name
+            First Name
           </label>
           <input
             type="text"
-            id="fullName"
+            id="firstName"
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple_color"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             required
           />
         </div>
         <div className="mb-4">
           <label
-            htmlFor="username"
+            htmlFor="lastName"
             className="block text-active_text font-semibold"
           >
-            Username
+            Last Name
           </label>
           <input
             type="text"
-            id="username"
+            id="lastName"
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple_color"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             required
           />
         </div>
