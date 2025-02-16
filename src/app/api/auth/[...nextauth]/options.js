@@ -1,4 +1,6 @@
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import DiscordProvider from "next-auth/providers/discord";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { sql } from "@vercel/postgres";
 import bcrypt from "bcrypt";
@@ -26,6 +28,14 @@ const Login = CredentialsSchema.omit({
 
 export const options = {
   providers: [
+    DiscordProvider({
+      clientId: process.env.AUTH_DISCORD_ID,
+      clientSecret: process.env.AUTH_DISCORD_SECRET,
+    }),
+    GoogleProvider({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
@@ -33,7 +43,7 @@ export const options = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Email", type: "text" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
 
@@ -92,6 +102,29 @@ export const options = {
     strategy: "jwt",
   },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      if (!user.email) {
+        console.error("Email is missing from the provider data.");
+        return false;
+      }
+
+      const userData = {
+        email: user.email,
+        firstName: user.name.split(" ")[0] || user.name || "Unknown",
+        lastName: user.name.split(" ")[1] || user.name || "Unknown",
+        provider: account.provider,
+      };
+
+      const existingUser =
+        await sql`select * from users where email=${userData.email}`;
+      if (existingUser.rowCount === 0) {
+        await sql`insert into users(email, firstname, lastname, provider) values(${userData.email}, ${userData.firstName}, ${userData.lastName}, ${userData.provider})`;
+      } else {
+        await sql`update users set firstname = ${userData.firstName}, lastname = ${userData.lastName}, provider = ${userData.provider} where email = ${userData.email}`;
+      }
+
+      return true;
+    },
     async redirect({ url, baseUrl }) {
       // console.log("Redirect Callback Triggered:");
       // console.log("URL:", url);
